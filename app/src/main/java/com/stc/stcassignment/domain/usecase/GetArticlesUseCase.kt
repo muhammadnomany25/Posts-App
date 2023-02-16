@@ -12,5 +12,6 @@ constructor(
     private val articlesRepository: ArticlesRepository,
 ) {
 
-    operator fun invoke(): Flow<PagingData<Article>> = articlesRepository.getArticles()
+    operator fun invoke(country: String): Flow<PagingData<Article>> =
+        articlesRepository.getArticles(country)
 }
