@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface ArticlesRepository {
 
-    fun getArticles(country: String): Flow<PagingData<Article>>
+    fun getArticles(): Flow<PagingData<Article>>
 }

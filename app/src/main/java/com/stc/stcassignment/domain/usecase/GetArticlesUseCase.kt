@@ -7,11 +7,8 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class GetArticlesUseCase
-@Inject
-constructor(
+@Inject constructor(
     private val articlesRepository: ArticlesRepository,
 ) {
-
-    operator fun invoke(country: String): Flow<PagingData<Article>> =
-        articlesRepository.getArticles(country)
+    operator fun invoke(): Flow<PagingData<Article>> = articlesRepository.getArticles()
 }

@@ -17,8 +17,8 @@ class ArticleRepositoryImpl
     private val articleDtoMapper: ArticleDtoMapper,
 ) : ArticlesRepository {
 
-    override fun getArticles(country: String): Flow<PagingData<Article>> {
+    override fun getArticles(): Flow<PagingData<Article>> {
         return Pager(config = PagingConfig(PAGINATION_PAGE_SIZE),
-            pagingSourceFactory = { ArticlePagingSource(api, articleDtoMapper, country) }).flow
+            pagingSourceFactory = { ArticlePagingSource(api, articleDtoMapper) }).flow
     }
 }

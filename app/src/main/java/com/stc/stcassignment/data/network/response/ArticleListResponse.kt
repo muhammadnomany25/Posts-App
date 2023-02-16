@@ -8,6 +8,6 @@ data class ArticleListResponse(
 
     @SerializedName("status") val status: String?,
 
-    @SerializedName("totalResults") val totalResults: Int,
+    @SerializedName("total_pages") val total_pages: Int,
 )
 
