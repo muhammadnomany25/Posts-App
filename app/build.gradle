@@ -39,7 +39,6 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
@@ -76,10 +75,19 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"
 
+    //--Room DB
+    implementation 'androidx.room:room-common:2.4.0'
+    kapt 'androidx.room:room-compiler:2.4.0'
+    implementation 'androidx.room:room-ktx:2.4.0'
+
     //--Retrofit2
     def retrofit_version = "2.9.0"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    //--OkHttp
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
     //--Glide
     def glide_version = "4.12.0"
@@ -89,9 +97,6 @@ dependencies {
     //--Paging3
     def paging_version = "3.1.1"
     implementation "androidx.paging:paging-runtime:$paging_version"
-
-    //--Image Slider
-    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
 
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
 }

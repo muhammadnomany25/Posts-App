@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="error">#B00020</color>
+    <color name="shimmer_color">#C2C2C2</color>
+
+    <color name="background_dark">#1F2532</color>
+    <color name="surface_dark">#283042</color>
+    <color name="toolbar_dark">#11141A</color>
 </resources>
