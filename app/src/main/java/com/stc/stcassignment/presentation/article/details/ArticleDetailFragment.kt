@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.stc.stcassignment.databinding.FragmentArticleDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,6 +22,20 @@ class ArticleDetailFragment : Fragment() {
     ): View {
         binding = FragmentArticleDetailBinding.inflate(layoutInflater)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setViewsDetails()
+    }
+
+    private fun setViewsDetails() {
+        binding.tvTitle.text = arguments?.getString("title")
+        binding.tvContent.text = arguments?.getString("content")
+        Glide.with(binding.root)
+            .load(arguments?.getString("image"))
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .into(binding.ivImage)
     }
 
 }
