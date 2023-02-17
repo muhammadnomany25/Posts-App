@@ -47,7 +47,6 @@ object NetworkDiModule {
         val headerInterceptor = Interceptor { chain ->
             val request = chain.request()
             val builder: Request.Builder = request.newBuilder()
-            builder.addHeader("x-api-key", Constants.API_KEY)
             chain.proceed(builder.build())
         }
         return OkHttpClient.Builder()

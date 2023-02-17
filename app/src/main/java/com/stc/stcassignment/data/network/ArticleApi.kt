@@ -9,7 +9,7 @@ interface ArticleApi {
 
     @GET("top-headlines?")
     suspend fun getArticles(
-        @Header("apiKey") apiKey: String,
+        @Query("apiKey") apiKey: String,
         @Query("country") country: String,
         @Query("page") page: Int,
         @Query("pageSize") pageSize: Int,
