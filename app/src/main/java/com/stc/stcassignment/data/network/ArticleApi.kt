@@ -7,12 +7,12 @@ import retrofit2.http.Query
 
 interface ArticleApi {
 
-    @GET("search")
+    @GET("top-headlines?")
     suspend fun getArticles(
-        @Header("x-api-key") apiKey: String,
-        @Query("q") query: String,
+        @Header("apiKey") apiKey: String,
+        @Query("country") country: String,
         @Query("page") page: Int,
-        @Query("page_size") pageSize: Int,
+        @Query("pageSize") pageSize: Int,
     ): ArticleListResponse
 
 }
